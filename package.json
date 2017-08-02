@@ -1,0 +1,28 @@
+{
+  "name": "yatest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run compile\"",
+    "server": "browser-sync start -s --port 3000",
+    "compile": "watchify js/app.js -d -o index.js -t [ babelify --presets [es2015] ] -v",
+    "bundle": "uglifyjs ./index.js -o ./index.js -c -m"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-polyfill": "^6.23.0",
+    "vanilla-masker": "^1.2.0",
+    "whatwg-fetch": "^2.0.3"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^7.3.0",
+    "concurrently": "^3.5.0",
+    "eslint": "^4.3.0",
+    "eslint-config-airbnb-base": "^11.3.1",
+    "eslint-plugin-import": "^2.7.0",
+    "uglifyify": "^4.0.3"
+  }
+}
