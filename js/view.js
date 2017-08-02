@@ -16,7 +16,10 @@ const view = (() => {
 
   VMasker(phone).maskPattern('+9(999)999-99-99');
 
-  form.addEventListener('submit', evt => myForm.submit(evt));
+  form.addEventListener('submit', evt => {
+    evt.preventDefault();
+    myForm.submit();
+  });
 
   function borderError(fields) {
     fields.forEach(field => {

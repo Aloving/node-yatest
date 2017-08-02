@@ -48,23 +48,18 @@ const myForm = (() => {
     viewForm.phone.value = formatedPhone;
   }
 
-  function submit(evt) {
-    if (evt) {
-      evt.preventDefault();
-    }
+  function submit() {
     const validationInfo = validate();
 
     view.domActions.resetForm();
 
     if (validationInfo.isValid) {
       view.domActions.disableBtn();
-      requestToServer().then(responseHandler);
+      return requestToServer().then(responseHandler);
     }
     if (!validationInfo.isValid) {
       return view.domActions.borderError(validationInfo.errorFields);
     }
-
-    return false;
   }
 
   return {
