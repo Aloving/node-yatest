@@ -1,5 +1,4 @@
 import view from '../view';
-import { requestWithErr, requestWithSucc, requestWithProg } from './fetchMap';
 
 function requestToServer() {
   const form = view.domEls.form;
