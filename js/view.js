@@ -2,7 +2,7 @@ import VMasker from 'vanilla-masker';
 import myForm from './MyForm';
 
 const view = (() => {
-  const form = document.getElementById('user-form');
+  const form = document.getElementById('myForm');
   const fio = form.querySelector('#fio');
   const email = form.querySelector('#email');
   const phone = form.querySelector('#phone');
