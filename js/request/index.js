@@ -1,11 +1,11 @@
+import view from '../view';
 import { requestWithErr, requestWithSucc, requestWithProg } from './fetchMap';
 
 function requestToServer() {
-  const reqVariations = [requestWithErr, requestWithSucc, requestWithProg];
-  const randomAction =
-    reqVariations[Math.floor(Math.random() * reqVariations.length)];
+  const form = view.domEls.form;
+  const formAction = form.getAttribute('action');
 
-  return randomAction();
+  return fetch(formAction).then(res => res.json());
 }
 
 export default requestToServer;

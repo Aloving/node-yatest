@@ -13,7 +13,7 @@ const myForm = (() => {
   function getData() {
     const fio = viewForm.fio.value;
     const email = viewForm.email.value;
-    const phone = viewForm.phone.value.replace(/[+\-()]/gi, '');
+    const phone = viewForm.phone.value;
 
     return {
       fio,
